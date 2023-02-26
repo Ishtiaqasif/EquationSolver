@@ -1,0 +1,34 @@
+﻿# Visual Studio files
+.vs/
+obj/
+
+*.suo
+*.user
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.pdb
+*.obj
+*.exe
+*.dll
+
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+
+# NuGet Packages
+*.nupkg
+*.nuget.props
+*.nuget.targets
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# BenchmarkDotNet Artifacts
+BenchmarkDotNet.Artifacts/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json

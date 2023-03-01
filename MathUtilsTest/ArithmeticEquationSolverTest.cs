@@ -1,4 +1,3 @@
-using MathUtils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MathUtils.Tests
@@ -6,15 +5,16 @@ namespace MathUtils.Tests
     [TestClass]
     public class ArithmeticEquationSolverTest
     {
-
         [TestClass]
         public class SolverTest
         {
             private readonly EquationSolver _equationSolver;
+
             public SolverTest()
             {
                 _equationSolver = new EquationSolver();
             }
+
             [TestMethod]
             public void TestAddition()
             {

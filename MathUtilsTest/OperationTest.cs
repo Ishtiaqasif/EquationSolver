@@ -1,11 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MathUtils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
 
 namespace MathUtils.Tests
 {
@@ -13,6 +6,7 @@ namespace MathUtils.Tests
     public class OperationTest
     {
         private readonly Operation _operation;
+
         public OperationTest()
         {
             _operation = new Operation();

@@ -1,15 +1,15 @@
-﻿using System;
+﻿using MathUtils.Operators;
 using System.Collections.Generic;
 
 namespace MathUtils
 {
     public class EquationSolver
     {
-        private readonly IArithmeticOperation _arithmeticOperation;
+        private readonly SortedDictionary<string, Operator> _supportedOperators;
 
         public EquationSolver()
         {
-            _arithmeticOperation = new Operation();
+            _supportedOperators = new SupportedOperators().Operators;
         }
 
         public double Evaluate(string equation)
@@ -22,7 +22,6 @@ namespace MathUtils
             {
                 if (char.IsDigit(equation[index]))
                 {
-                    
                     double operand = 0;
                     while (index < equation.Length && char.IsDigit(equation[index]))
                     {
@@ -72,29 +71,11 @@ namespace MathUtils
         {
             double operand2 = operands.Pop();
             double operand1 = operands.Pop();
+
             char op = operators.Pop();
-            double result;
-            switch (op)
-            {
-                case '+':
-                    result = _arithmeticOperation.Add(operand1, operand2);
-                    break;
 
-                case '-':
-                    result = _arithmeticOperation.Subtract(operand1, operand2);
-                    break;
+            double result = _supportedOperators[op.ToString()].OperationHandler(operand1, operand2);
 
-                case '*':
-                    result = _arithmeticOperation.Multiply(operand1, operand2);
-                    break;
-
-                case '/':
-                    result = _arithmeticOperation.Divide(operand1, operand2);
-                    break;
-
-                default:
-                    throw new ArgumentException("Invalid operator: " + op);
-            }
             operands.Push(result);
         }
     }

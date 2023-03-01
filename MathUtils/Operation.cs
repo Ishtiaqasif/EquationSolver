@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MathUtils
 {
-    public class Operation: IArithmeticOperation
+    public class Operation : IArithmeticOperation
     {
         public double Add(double a, double b)
         {
@@ -23,9 +21,8 @@ namespace MathUtils
 
         public double Subtract(double a, double b)
         {
-            if(b == 0) throw new DivideByZeroException();
+            if (b == 0) throw new DivideByZeroException();
             return a - b;
         }
-
     }
 }
